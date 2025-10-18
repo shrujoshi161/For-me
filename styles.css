@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.message {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+}
+
+h1 {
+    color: #ff4b6e;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+    animation: floatHeart 4s ease-in infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.heart:before {
+    left: -10px;
+}
+
+.heart:after {
+    top: -10px;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: rotate(45deg) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translateY(-100vh);
+        opacity: 0;
+    }
+}
